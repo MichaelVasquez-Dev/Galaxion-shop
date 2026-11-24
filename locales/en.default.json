@@ -80,10 +80,10 @@
   },
   "actions": {
     // Quick add button on product cards, shortened version of add to cart
-    "add": "Add",
-    "add_to_cart": "Add to cart",
+    "add": "Agregar",
+    "add_to_cart": "Agregar al carrito",
     // Success message shown after adding item to cart
-    "added": "Added",
+    "added": "Agregado",
     // Button to apply discount code to cart
     "apply": "Apply",
     "back": "Back",
@@ -385,13 +385,13 @@
   },
   "products": {
     "product": {
-      "add_to_cart": "Add to cart",
-      "adding_to_cart": "Adding...",
-      "added_to_cart": "Added to cart",
-      "add_to_cart_error": "Error adding to cart",
+      "add_to_cart": "Agregar al carrito",
+      "adding_to_cart": "Agregando...",
+      "added_to_cart": "Agregado al carrito",
+      "add_to_cart_error": "No se pudo agregar al carrito",
       "quantity_error_max": "This item has a maximum of {{ maximum }}",
-      "sold_out": "Sold out",
-      "unavailable": "Unavailable",
+      "sold_out": "Agotado",
+      "unavailable": "No disponible",
       "quantity": "Quantity",
       "quantity_increments": "Increments of {{ increment }}",
       "quantity_minimum": "Minimum of {{ minimum }}",

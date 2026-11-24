@@ -4,20 +4,13 @@
  * contrast math need them). Gradients are normal CSS and are accepted in
  * theme assets. Payment buttons are left untouched.
  *
- * Canvas: dark purple → dark rose → black.
+ * Canvas: dark purple at the top, black at the bottom.
  */
 
 body,
 .page-wrapper {
   background-color: var(--color-background);
-  background-image: linear-gradient(
-    165deg,
-    #1a0b2e 0%,
-    #3b1464 32%,
-    var(--color-primary-button-background) 58%,
-    #120810 84%,
-    var(--color-background) 100%
-  );
+  background-image: linear-gradient(to bottom, #3b1464 0%, #1a0b2e 48%, var(--color-background) 100%);
   background-repeat: no-repeat;
 }
 
@@ -33,13 +26,8 @@ body,
 }
 
 .announcement-bar {
-  background-color: #2a1038;
-  background-image: linear-gradient(
-    100deg,
-    #1a0b2e 0%,
-    var(--color-primary-button-background) 52%,
-    var(--color-background) 100%
-  );
+  background-color: #2a1248;
+  background-image: linear-gradient(to bottom, #3b1464 0%, #120814 100%);
 }
 
 .button:not(
@@ -49,7 +37,7 @@ body,
     .shopify-payment-button__button--unbranded
   ),
 .button-custom {
-  background-image: linear-gradient(120deg, #3b1464 0%, var(--color-primary-button-background) 100%);
+  background-image: linear-gradient(to bottom, #5c348c 0%, #2a1248 100%);
 }
 
 .announcement-bar__text {
