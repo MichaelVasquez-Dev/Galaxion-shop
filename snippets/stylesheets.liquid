@@ -1,0 +1,10 @@
+{{ 'overflow-list.css' | asset_url | preload_tag: as: 'style' }}
+{{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'galaxion-visual.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  :root {
+    --product-corner-radius: {{ settings.product_corner_radius | default: 16 }}px;
+    --card-corner-radius: {{ settings.card_corner_radius | default: 12 }}px;
+  }
+{% endstyle %}

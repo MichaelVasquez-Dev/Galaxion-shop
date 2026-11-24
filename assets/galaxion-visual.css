@@ -1,0 +1,47 @@
+/*
+ * Visual layer for Galaxion.
+ * Dark black, deep rose, and purple. Color values come from theme settings
+ * where Horizon already exposes them. Does not restyle accelerated checkout.
+ */
+
+#header-component[data-sticky-state='active'] {
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--color-primary-button-background) 55%, transparent),
+    0 18px 48px rgb(0 0 0 / 0.55);
+}
+
+.announcement-bar {
+  background-image: linear-gradient(100deg, #3a1028 0%, #4c1d6e 52%, #140a18 100%);
+}
+
+.announcement-bar__text {
+  letter-spacing: 0.12em;
+}
+
+.card-gallery,
+.collection-card__image {
+  background-color: color-mix(in srgb, var(--color-foreground) 7%, var(--color-background));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-primary-button-background) 42%, transparent);
+}
+
+.product-card .text-block,
+.collection-card .text-block {
+  letter-spacing: -0.011em;
+}
+
+.button:not(.shopify-payment-button__button, .shopify-payment-button__button--unbranded),
+.button-secondary,
+.button-custom {
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: var(--color-primary-button-background);
+  color: var(--color-primary-button-text);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #header-component[data-sticky-state] {
+    transition: box-shadow 0.25s ease;
+  }
+}
