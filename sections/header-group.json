@@ -22,7 +22,7 @@
             "font_size": "0.75rem",
             "letter_spacing": "loose",
             "case": "uppercase",
-            "text_color": "#FFF6F9"
+            "text_color": "#F6F3EE"
           },
           "blocks": {}
         }
@@ -34,7 +34,7 @@
       "settings": {
         "speed": 5,
         "section_width": "full-width",
-        "background_color": "#2A1248",
+        "background_color": "#1A1916",
         "divider_width": 0,
         "divider_color": "{{ settings.color_palette.color2 }}",
         "padding-block-start": 10,

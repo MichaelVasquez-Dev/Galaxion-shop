@@ -252,6 +252,60 @@
   </div>
 </div>
 
+{%- unless cart == empty -%}
+  <fieldset class="cod-choice">
+    <legend class="cod-choice__label">Método de pago</legend>
+    <label class="cod-choice__option">
+      <input
+        type="radio"
+        name="attributes[Método de pago]"
+        value="Contra entrega"
+        form="cart-form"
+        data-cod-option
+        {% if cart.attributes['Método de pago'] != 'Pago en línea' %}
+          checked
+        {% endif %}
+      >
+      <span>
+        <strong>Pago contra entrega</strong>
+        <small>Pagas en efectivo cuando recibes el pedido.</small>
+      </span>
+    </label>
+    <label class="cod-choice__option">
+      <input
+        type="radio"
+        name="attributes[Método de pago]"
+        value="Pago en línea"
+        form="cart-form"
+        data-cod-option
+        {% if cart.attributes['Método de pago'] == 'Pago en línea' %}
+          checked
+        {% endif %}
+      >
+      <span>
+        <strong>Pago en línea</strong>
+        <small>Tarjeta u otro método al finalizar la compra.</small>
+      </span>
+    </label>
+  </fieldset>
+  <script>
+    if (!window.galaxionCodBound) {
+      window.galaxionCodBound = true;
+      document.addEventListener('change', function (event) {
+        var input = event.target;
+        if (!input || !input.matches || !input.matches('[data-cod-option]')) return;
+        var root = (window.Shopify && Shopify.routes && Shopify.routes.root) || '/';
+        var attributes = { 'Método de pago': input.value };
+        fetch(root + 'cart/update.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ attributes: attributes }),
+        });
+      });
+    }
+  </script>
+{%- endunless -%}
+
 <div class="cart__ctas">
   <button
     type="submit"

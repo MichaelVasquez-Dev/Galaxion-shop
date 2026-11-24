@@ -1,33 +1,50 @@
 /*
  * Visual layer for Galaxion.
- * Shopify color settings only store solid colors (the editor and Liquid
- * contrast math need them). Gradients are normal CSS and are accepted in
- * theme assets. Payment buttons are left untouched.
+ * Solid colors live in theme settings. This file only adjusts layout.
+ * Payment buttons are left untouched.
  *
- * Canvas: dark purple at the top, black at the bottom.
+ * Canvas: warm paper, ink type, quiet cards.
  */
 
 body,
 .page-wrapper {
   background-color: var(--color-background);
-  background-image: linear-gradient(to bottom, #3b1464 0%, #1a0b2e 48%, var(--color-background) 100%);
-  background-repeat: no-repeat;
+  background-image: none;
 }
 
-/* Let the page gradient show through. Drawers and dialogs keep their own fill. */
 .shopify-section:not(.header-section) .section-background {
   background-color: transparent;
 }
 
-#header-component[data-sticky-state='active'] {
-  box-shadow:
-    0 1px 0 color-mix(in srgb, var(--color-primary-button-background) 55%, transparent),
-    0 18px 48px rgb(0 0 0 / 0.55);
+.announcement-bar {
+  background-color: #1a1916;
+  background-image: none;
 }
 
-.announcement-bar {
-  background-color: #2a1248;
-  background-image: linear-gradient(to bottom, #3b1464 0%, #120814 100%);
+.announcement-bar__text {
+  letter-spacing: 0.14em;
+}
+
+.announcement-bar__slide,
+.announcement-bar__text {
+  text-align: center;
+}
+
+#header-component[data-sticky-state='active'] {
+  box-shadow: 0 1px 0 #e4dfd6;
+}
+
+.header-logo {
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.header-actions__action,
+.header__icon--summary {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
 }
 
 .button:not(
@@ -37,27 +54,58 @@ body,
     .shopify-payment-button__button--unbranded
   ),
 .button-custom {
-  background-image: linear-gradient(to bottom, #5c348c 0%, #2a1248 100%);
+  background-image: none;
+  letter-spacing: 0.01em;
 }
 
-.announcement-bar__text {
-  letter-spacing: 0.12em;
+.button-secondary {
+  letter-spacing: 0.01em;
 }
 
-.card-gallery,
+.hero .button-secondary {
+  min-height: 3rem;
+  padding-inline: 1.35rem;
+  border-radius: 6px;
+  border-color: #f6f3ee;
+  background-color: #f6f3ee;
+  background-image: none;
+  color: #1a1916;
+}
+
+.hero .text-block h1,
+.hero .text-block p {
+  text-shadow: 0 1px 16px rgb(26 25 22 / 0.28);
+}
+
+/* Product cards: a paper surface, a quiet image well, room to read. */
+.product-card__content {
+  background-color: #fffdfb;
+  border: 1px solid #e4dfd6;
+  border-radius: 18px;
+  padding: 10px 10px 18px;
+  box-shadow: 0 16px 40px rgb(26 25 22 / 0.05);
+}
+
+.product-card .card-gallery,
 .collection-card__image {
-  background-color: color-mix(in srgb, var(--color-foreground) 7%, var(--color-background));
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-primary-button-background) 42%, transparent);
+  background-color: #efebe4;
+  box-shadow: none;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .product-card .text-block,
 .collection-card .text-block {
-  letter-spacing: -0.011em;
+  letter-spacing: -0.015em;
 }
 
-/* Product details, arranged like a buy box: media well, swatches, quantity beside the cart button. */
+.product-card .text-block {
+  padding-inline: 6px;
+}
+
 .product-information__media .product-media-container:not(.dialog-zoomed-gallery *) {
-  background-color: color-mix(in srgb, var(--color-foreground) 8%, var(--color-background));
+  background-color: #efebe4;
+  border-radius: 20px;
 }
 
 .product-information .product-form-buttons {
@@ -65,17 +113,15 @@ body,
 }
 
 .product-information .quantity-selector {
-  border: 1px solid color-mix(in srgb, var(--color-foreground) 35%, transparent);
-  border-radius: 999px;
-  min-height: 3.25rem;
-  background: transparent;
+  border: 1px solid #e4dfd6;
+  border-radius: 8px;
+  min-height: 3rem;
+  background: #fffdfb;
 }
 
-.product-information .product-form-buttons .add-to-cart-button.button-secondary {
-  min-height: 3.25rem;
-  border-radius: 999px;
-  background-image: none;
-  background-color: transparent;
+.product-information .product-form-buttons .add-to-cart-button {
+  min-height: 3rem;
+  border-radius: 8px;
 }
 
 .product-information .product-form-buttons shopify-accelerated-checkout,
@@ -83,83 +129,72 @@ body,
   flex: 1 0 100%;
 }
 
-.button:not(.shopify-payment-button__button, .shopify-payment-button__button--unbranded),
-.button-secondary,
-.button-custom {
-  letter-spacing: 0.01em;
+.cod-choice {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 12px;
+  padding: 0;
+  border: 0;
+  min-inline-size: 0;
+}
+
+.cod-choice__label {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6f6a62;
+}
+
+.cod-choice__option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 12px;
+  border: 1px solid #e4dfd6;
+  border-radius: 12px;
+  background: #fffdfb;
+  cursor: pointer;
+}
+
+.cod-choice__option:has(input:checked) {
+  border-color: #1a1916;
+}
+
+.cod-choice__option input {
+  margin-top: 3px;
+  accent-color: #1a1916;
+}
+
+.cod-choice__option strong,
+.cod-choice__option small {
+  display: block;
+}
+
+.cod-choice__option strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.cod-choice__option small {
+  margin-top: 2px;
+  color: #6f6a62;
+  line-height: 1.4;
 }
 
 ::selection {
-  background: var(--color-primary-button-background);
-  color: var(--color-primary-button-text);
+  background: #1a1916;
+  color: #f6f3ee;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  #header-component[data-sticky-state] {
-    transition: box-shadow 0.25s ease;
+  .product-card__content {
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
   }
-}
 
-/*
- * Header as a floating pill: letterspaced wordmark, circular actions,
- * sitting over the homepage hero. The closed underlay stays clear so the
- * page gradient and the hero show around the pill.
- */
-#header-component .header__underlay-closed {
-  background: transparent;
-}
-
-#header-component .header__row--top {
-  position: relative;
-  z-index: 2;
-  margin: 0.65rem max(0.75rem, var(--page-margin)) 0.45rem;
-  border-radius: 999px;
-  background: rgb(18 8 28 / 0.78);
-  border: 1px solid rgb(215 198 228 / 0.22);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 12px 40px rgb(0 0 0 / 0.35);
-}
-
-#header-component .header__row--top .header__columns {
-  padding-inline: 0.85rem;
-}
-
-.header-logo {
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-.header-actions__action,
-.header__icon--summary {
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 999px;
-  background: rgb(246 240 248 / 0.12);
-}
-
-.announcement-bar__slide,
-.announcement-bar__text {
-  text-align: center;
-}
-
-.template-index .header-section {
-  position: relative;
-  z-index: 5;
-  margin-bottom: calc(var(--header-height) * -1);
-}
-
-.hero .button-secondary {
-  min-height: 3.25rem;
-  padding-inline: 1.4rem;
-  border-radius: 999px;
-  border-color: #f6f0f8;
-  background-color: #f6f0f8;
-  background-image: none;
-  color: #1a0b2e;
-}
-
-.hero .text-block h1,
-.hero .text-block p {
-  text-shadow: 0 1px 18px rgb(0 0 0 / 0.35);
+  .product-card:hover .product-card__content {
+    box-shadow: 0 22px 48px rgb(26 25 22 / 0.1);
+    transform: translateY(-3px);
+  }
 }

@@ -77,7 +77,7 @@
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
-            "border_color": "#5B348C",
+            "border_color": "#E4DFD6",
             "border_radius": 0,
             "padding-block-start": 8,
             "padding-block-end": 8,
@@ -272,11 +272,11 @@
                   "static": true,
                   "settings": {
                     "input_style": "custom",
-                    "input_background_color": "#120C1C",
-                    "input_text_color": "#F6F0F8",
-                    "input_border_color": "#5B348C",
+                    "input_background_color": "#FFFFFF",
+                    "input_text_color": "#1A1916",
+                    "input_border_color": "#E4DFD6",
                     "border_width": 1,
-                    "border_radius": 50
+                    "border_radius": 8
                   },
                   "blocks": {}
                 },
@@ -284,7 +284,7 @@
                   "type": "add-to-cart",
                   "static": true,
                   "settings": {
-                    "style_class": "button-secondary",
+                    "style_class": "button",
                     "custom_button_background": "{{ settings.color_palette.foreground }}",
                     "custom_button_text": "{{ settings.color_palette.background }}",
                     "custom_button_border": "{{ settings.color_palette.background }}"
@@ -379,7 +379,7 @@
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
-                    "text_color": "#F6F0F8",
+                    "text_color": "#1A1916",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -404,7 +404,7 @@
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
-                    "text_color": "#F6F0F8",
+                    "text_color": "#1A1916",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -429,7 +429,7 @@
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
-                    "text_color": "#F6F0F8",
+                    "text_color": "#1A1916",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
