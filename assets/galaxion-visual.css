@@ -1,10 +1,26 @@
 /*
  * Visual layer for Galaxion.
- * Solid colors live in theme settings. This file only adjusts layout.
+ * Solid colors live in theme settings. This file adjusts layout.
  * Payment buttons are left untouched.
  *
- * Canvas: warm paper, ink type, quiet cards.
+ * Canvas: warm black. Content sits inside a clear page margin.
  */
+
+.page-width-wide,
+.page-width-normal,
+.page-width-narrow,
+.page-width-content {
+  --page-margin: max(28px, var(--safe-area-inset-left, 0px), var(--safe-area-inset-right, 0px));
+}
+
+@media screen and (min-width: 750px) {
+  .page-width-wide,
+  .page-width-normal,
+  .page-width-narrow,
+  .page-width-content {
+    --page-margin: max(80px, var(--safe-area-inset-left, 0px), var(--safe-area-inset-right, 0px));
+  }
+}
 
 body,
 .page-wrapper {
@@ -17,7 +33,7 @@ body,
 }
 
 .announcement-bar {
-  background-color: #1a1916;
+  background-color: #161513;
   background-image: none;
 }
 
@@ -31,7 +47,14 @@ body,
 }
 
 #header-component[data-sticky-state='active'] {
-  box-shadow: 0 1px 0 #e4dfd6;
+  box-shadow: 0 1px 0 #2a2723;
+}
+
+.hero__container {
+  width: auto;
+  margin-inline: var(--page-margin);
+  margin-block-start: 16px;
+  border-radius: 28px;
 }
 
 .header-logo {
@@ -79,16 +102,16 @@ body,
 
 /* Product cards: a paper surface, a quiet image well, room to read. */
 .product-card__content {
-  background-color: #fffdfb;
-  border: 1px solid #e4dfd6;
+  background-color: #1a1816;
+  border: 1px solid #3a3631;
   border-radius: 18px;
-  padding: 10px 10px 18px;
-  box-shadow: 0 16px 40px rgb(26 25 22 / 0.05);
+  padding: 14px 14px 20px;
+  box-shadow: 0 16px 40px rgb(0 0 0 / 0.28);
 }
 
 .product-card .card-gallery,
 .collection-card__image {
-  background-color: #efebe4;
+  background-color: #242220;
   box-shadow: none;
   border-radius: 12px;
   overflow: hidden;
@@ -104,7 +127,7 @@ body,
 }
 
 .product-information__media .product-media-container:not(.dialog-zoomed-gallery *) {
-  background-color: #efebe4;
+  background-color: #242220;
   border-radius: 20px;
 }
 
@@ -113,10 +136,10 @@ body,
 }
 
 .product-information .quantity-selector {
-  border: 1px solid #e4dfd6;
+  border: 1px solid #3a3631;
   border-radius: 8px;
   min-height: 3rem;
-  background: #fffdfb;
+  background: #1c1a17;
 }
 
 .product-information .product-form-buttons .add-to-cart-button {
@@ -143,7 +166,7 @@ body,
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #6f6a62;
+  color: #a8a196;
 }
 
 .cod-choice__option {
@@ -152,19 +175,19 @@ body,
   gap: 10px;
   align-items: start;
   padding: 12px;
-  border: 1px solid #e4dfd6;
+  border: 1px solid #3a3631;
   border-radius: 12px;
-  background: #fffdfb;
+  background: #1a1816;
   cursor: pointer;
 }
 
 .cod-choice__option:has(input:checked) {
-  border-color: #1a1916;
+  border-color: #f4efe6;
 }
 
 .cod-choice__option input {
   margin-top: 3px;
-  accent-color: #1a1916;
+  accent-color: #f4efe6;
 }
 
 .cod-choice__option strong,
@@ -179,13 +202,13 @@ body,
 
 .cod-choice__option small {
   margin-top: 2px;
-  color: #6f6a62;
+  color: #a8a196;
   line-height: 1.4;
 }
 
 ::selection {
-  background: #1a1916;
-  color: #f6f3ee;
+  background: #f4efe6;
+  color: #12110f;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -194,7 +217,7 @@ body,
   }
 
   .product-card:hover .product-card__content {
-    box-shadow: 0 22px 48px rgb(26 25 22 / 0.1);
+    box-shadow: 0 22px 48px rgb(0 0 0 / 0.45);
     transform: translateY(-3px);
   }
 }
