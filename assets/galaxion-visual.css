@@ -99,3 +99,67 @@ body,
     transition: box-shadow 0.25s ease;
   }
 }
+
+/*
+ * Header as a floating pill: letterspaced wordmark, circular actions,
+ * sitting over the homepage hero. The closed underlay stays clear so the
+ * page gradient and the hero show around the pill.
+ */
+#header-component .header__underlay-closed {
+  background: transparent;
+}
+
+#header-component .header__row--top {
+  position: relative;
+  z-index: 2;
+  margin: 0.65rem max(0.75rem, var(--page-margin)) 0.45rem;
+  border-radius: 999px;
+  background: rgb(18 8 28 / 0.78);
+  border: 1px solid rgb(215 198 228 / 0.22);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 40px rgb(0 0 0 / 0.35);
+}
+
+#header-component .header__row--top .header__columns {
+  padding-inline: 0.85rem;
+}
+
+.header-logo {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.header-actions__action,
+.header__icon--summary {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  background: rgb(246 240 248 / 0.12);
+}
+
+.announcement-bar__slide,
+.announcement-bar__text {
+  text-align: center;
+}
+
+.template-index .header-section {
+  position: relative;
+  z-index: 5;
+  margin-bottom: calc(var(--header-height) * -1);
+}
+
+.hero .button-secondary {
+  min-height: 3.25rem;
+  padding-inline: 1.4rem;
+  border-radius: 999px;
+  border-color: #f6f0f8;
+  background-color: #f6f0f8;
+  background-image: none;
+  color: #1a0b2e;
+}
+
+.hero .text-block h1,
+.hero .text-block p {
+  text-shadow: 0 1px 18px rgb(0 0 0 / 0.35);
+}

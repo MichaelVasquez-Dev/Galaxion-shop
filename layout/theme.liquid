@@ -31,7 +31,7 @@
     {{ content_for_header }}
   </head>
 
-  <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
+  <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }} template-{{ request.page_type }}">
     {% render 'skip-to-content-link', href: '#MainContent', text: 'accessibility.skip_to_text' %}
 
     {% render 'chat-drawer' %}
@@ -96,7 +96,10 @@
          * Transparent-header rules consume the measured heights at first paint on every
          * template, so the transparent case opts in globally here instead of per-section.
          */
-        if (document.querySelector('#header-component')?.hasAttribute('transparent')) {
+        if (
+          document.querySelector('#header-component')?.hasAttribute('transparent') ||
+          document.body.classList.contains('template-index')
+        ) {
           measureHeaderHeights();
         }
 
