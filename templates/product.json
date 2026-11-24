@@ -34,19 +34,19 @@
           "type": "_product-media-gallery",
           "static": true,
           "settings": {
-            "media_presentation": "grid",
+            "media_presentation": "carousel",
             "media_columns": "two",
             "image_gap": 12,
             "large_first_image": false,
-            "slideshow_controls_style": "counter",
-            "slideshow_mobile_controls_style": "dots",
-            "thumbnail_position": "right",
-            "thumbnail_width": 44,
-            "thumbnail_radius": 10,
+            "slideshow_controls_style": "thumbnails",
+            "slideshow_mobile_controls_style": "thumbnails",
+            "thumbnail_position": "bottom",
+            "thumbnail_width": 72,
+            "thumbnail_radius": 16,
             "aspect_ratio": "adapt",
             "constrain_to_viewport": true,
             "media_fit": "contain",
-            "media_radius": 20,
+            "media_radius": 24,
             "extend_media": false,
             "zoom": true,
             "video_loop": false,
@@ -68,21 +68,21 @@
             "custom_width_mobile": 100,
             "height": "fit",
             "details_position": "flex-start",
-            "gap": 20,
+            "gap": 16,
             "sticky_details_desktop": true,
             "background_media": "none",
-            "background_color": "#120C1C",
+            "background_color": "",
             "video_position": "cover",
             "background_image_position": "cover",
-            "border": "solid",
+            "border": "none",
             "border_width": 1,
             "border_opacity": 100,
             "border_color": "#5B348C",
-            "border_radius": 20,
-            "padding-block-start": 28,
-            "padding-block-end": 28,
-            "padding-inline-start": 24,
-            "padding-inline-end": 24
+            "border_radius": 0,
+            "padding-block-start": 8,
+            "padding-block-end": 8,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {
             "group_icgrde": {
@@ -171,9 +171,36 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
+                },
+                "vendor_line": {
+                  "type": "text",
+                  "name": "Marca",
+                  "settings": {
+                    "text": "<p>{{ closest.product.vendor }}</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "paragraph",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.875rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
+                "vendor_line",
                 "text_xrnftG",
                 "price_tVjtKg"
               ]
@@ -195,7 +222,7 @@
               "type": "variant-picker",
               "settings": {
                 "variant_style": "buttons",
-                "show_swatches": false,
+                "show_swatches": true,
                 "option_label_text_color": "",
                 "variant_style_class": "default",
                 "custom_variant_background": "{{ settings.color_palette.background }}",
@@ -216,7 +243,7 @@
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
               "settings": {
-                "stacking": true,
+                "stacking": false,
                 "text_color": "",
                 "show_pickup_availability": false,
                 "gift_card_form": true,
@@ -249,7 +276,7 @@
                     "input_text_color": "#F6F0F8",
                     "input_border_color": "#5B348C",
                     "border_width": 1,
-                    "border_radius": 14
+                    "border_radius": 50
                   },
                   "blocks": {}
                 },
@@ -257,7 +284,7 @@
                   "type": "add-to-cart",
                   "static": true,
                   "settings": {
-                    "style_class": "button",
+                    "style_class": "button-secondary",
                     "custom_button_background": "{{ settings.color_palette.foreground }}",
                     "custom_button_text": "{{ settings.color_palette.background }}",
                     "custom_button_border": "{{ settings.color_palette.background }}"
@@ -298,14 +325,41 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "trust_line": {
+              "type": "text",
+              "name": "Confianza",
+              "settings": {
+                "text": "<p>Envío rápido · Devoluciones · Soporte</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "0.875rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "group_icgrde",
-            "divider_VJhene",
+            "text_aEtTtq",
             "variant_picker_R3rGDr",
+            "divider_VJhene",
             "buy_buttons_eYQEYi",
-            "text_aEtTtq"
+            "trust_line"
           ]
         }
       },

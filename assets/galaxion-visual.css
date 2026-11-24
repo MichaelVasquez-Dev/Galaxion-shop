@@ -55,6 +55,34 @@ body,
   letter-spacing: -0.011em;
 }
 
+/* Product details, arranged like a buy box: media well, swatches, quantity beside the cart button. */
+.product-information__media .product-media-container:not(.dialog-zoomed-gallery *) {
+  background-color: color-mix(in srgb, var(--color-foreground) 8%, var(--color-background));
+}
+
+.product-information .product-form-buttons {
+  align-items: center;
+}
+
+.product-information .quantity-selector {
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 35%, transparent);
+  border-radius: 999px;
+  min-height: 3.25rem;
+  background: transparent;
+}
+
+.product-information .product-form-buttons .add-to-cart-button.button-secondary {
+  min-height: 3.25rem;
+  border-radius: 999px;
+  background-image: none;
+  background-color: transparent;
+}
+
+.product-information .product-form-buttons shopify-accelerated-checkout,
+.product-information .product-form-buttons .shopify-payment-button {
+  flex: 1 0 100%;
+}
+
 .button:not(.shopify-payment-button__button, .shopify-payment-button__button--unbranded),
 .button-secondary,
 .button-custom {
